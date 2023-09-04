@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Airline Passenger Satisfaction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+<body>
+    <div class="container">
+        <h1>Airline Passenger Satisfaction Prediction</h1>
+        <form action="/predict_data" method="POST">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br><br>
+
+            <label for="customer_type">Customer Type:</label>
+            <select id="customer_type" name="customer_type">
+                <option value="Loyal Customer">Loyal Customer</option>
+                <option value="disloyal Customer">disloyal Customer</option>
+            </select><br><br>
+
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age"><br><br>
+
+            <label for="type_of_travel">Type of Travel:</label>
+            <select id="type_of_travel" name="type_of_travel">
+                <option value="Personal Travel">Personal Travel</option>
+                <option value="Business travel">Business travel</option>
+            </select><br><br>
+
+            <label for="Class">Class:</label>
+            <select id="Class" name="Class">
+                <option value="Eco Plus">Eco Plus</option>
+                <option value="Business">Business</option>
+                <option value="Eco">Eco</option>
+            </select><br><br>
+
+            <label for="flight_distance">Flight Distance:</label>
+            <input type="text" id="flight_distance" name="flight_distance"><br><br>
+
+            <label for="inflight_wifi_service">Inflight Wifi Service:</label>
+            <select id="inflight_wifi_service" name="inflight_wifi_service">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="departure_arrival_time_convenient">Departure/Arrival Time Convenient:</label>
+            <select id="departure_arrival_time_convenient" name="departure_arrival_time_convenient">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="ease_of_online_booking">Ease of Online Booking:</label>
+            <select id="ease_of_online_booking" name="ease_of_online_booking">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+           
+            <label for="gate_location"> Gate Location:</label>
+            <select id="gate_location" name="gate_location">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="food_and_drink">Food and Drink:</label>
+            <select id="food_and_drink" name="food_and_drink">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="online_boarding">Online Boarding:</label>
+            <select id="online_boarding" name="online_boarding">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="seat_comfort">Seat Comfort:</label>
+            <select id="seat_comfort" name="seat_comfort">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="inflight_entertainment">Inflight Entertainment:</label>
+            <select id="inflight_entertainment" name="inflight_entertainment">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="on_board_service">On-board Service:</label>
+            <select id="on_board_service" name="on_board_service">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="leg_room_service">Leg Room Service:</label>
+            <select id="leg_room_service" name="leg_room_service">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="baggage_handling">Baggage Handling:</label>
+            <select id="baggage_handling" name="baggage_handling">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="checkin_service">Check-in Service:</label>
+            <select id="checkin_service" name="checkin_service">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="inflight_service">Inflight Service:</label>
+            <select id="inflight_service" name="inflight_service">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="cleanliness">Cleanliness:</label>
+            <select id="cleanliness" name="cleanliness">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="departure_delay_in_minutes">Departure Delay In minutes:</label>
+            <input type="number" id="departure_delay_in_minutes" name="departure_delay_in_minutes"><br><br>
+
+            <label for="arrival_delay_in_minutes">Arrival Delay In Minutes:</label>
+            <input type="number" id="arrival_delay_in_minutes" name="arrival_delay_in_minutes" step="0.1"><br><br>
+
+        
+    </div>
+    <div class="mb-3">
+        <input class="btn btn-primary" type="submit" value="Predict The Passanger's Satisfaction" required />
+    </div>
+</form>
+<h2>
+    The Airline Passanger is {{results}}
+ </h2>
+
+</body>
+</html>
+
+
