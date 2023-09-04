@@ -1,0 +1,14 @@
+pandas
+numpy
+seaborn
+plotly
+Flask
+mlflow
+dvc
+scikit-learn
+matplotlib
+xgboost
+lightgbm
+dill
+
+-e .
